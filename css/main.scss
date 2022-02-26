@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,600,700');
+$nunito-font: 'Nunito', sans-serif;
+
+// mixins
+
+$breakpoints: (
+  's': (max-width: 700px),
+  'l': (max-width: 720px),
+  'xl': (max-width: 1200px),
+  'xxl': (max-width: 1300px)) !default;
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+    +"Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@keyframes floating {
+  from { transform: translateY(0px); }
+  65%  { transform: translateY(15px); }
+  to   { transform: translateY(-0px); }
+}
+
+// keyrames
+
+
+
+.origin {
+ 
+  position: relative;
+  transform-origin: 150px 150px;
+
+  animation: spin 20s linear infinite;
+  @include respond-to('xl') {
+    transform-origin: 100px 100px;
+
+  }
+  @keyframes spin {
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+  }
+} 
+
+@keyframes floating {
+    from { transform: translateY(0px); }
+    65%  { transform: translateY(15px); }
+    to   { transform: translateY(-0px); }
+}
+
+html, body {
+  height: 100vh;
+  margin: 0;
+  background: white;
+  overflow-x: hidden;
+
+
+   }
+
+
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  @include respond-to('xl') {
+    justify-content: space-between;
+  }
+  @include respond-to('l') {
+    background: url("../img/stars.svg"), linear-gradient(0deg, #13B0EF 5.16%, #007BC8 94.29%);
+  }
+  @include respond-to('s') {
+    justify-content: center;
+  }
+}
+
+.astronaut{
+  align-self: center;
+  margin-left: 30px;
+  margin-bottom: 120px;
+  animation: floating 3s infinite ease-in-out;
+  @include respond-to('s') {
+    margin: 0;
+    align-self:center;
+  }
+}
+
+.text-wrapper{
+  text-align: center;
+  font-family: sans-serif;
+  @include respond-to('xl') {
+    margin-bottom: 50px;
+    padding: 20px 50px;
+  }
+  @include respond-to('xl') {
+    margin: 30px;
+    padding: 20px 30px;
+    background: rgba(255, 255,255,1);
+    border-radius: 30px;
+  }
+  .title{
+   font-size: 30px;
+   color: rgba(0,0,0,0.8);
+   
+  }
+  .subtitle{
+  font-size: 20px;
+  color: rgba(0,0,0,0.4);
+
+  }
+}
+
+.stars{
+  position: absolute;
+  top: 80px;
+  @include respond-to('xl') {
+    display: none;
+  }
+}
+
+.moon{
+  animation: spin 20s linear infinite;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 50px;
+  @include respond-to('xl') {
+    transform-origin: 170px 170px;
+  }
+  @include respond-to('s') {
+    display: none;
+  }
+}
+
+.planet{
+  @include respond-to('s') {
+    display: none;
+  }
+}
+
+.system{
+  margin-left: 30px;
+  width: 350px;
+  height: 350px;
+  align-self: center;
+	animation: floating 3s infinite ease-in-out;
+  animation-delay: -1s;
+  @include respond-to('s') {
+    display: none;
+  }
+}
+
+.space{
+  position: relative;
+  background: url(../img/sky.svg) center center no-repeat;
+  display: flex;
+  justify-content: center;
+  min-height: 500px;
+  @include respond-to('xl') {
+      background: url("../img/stars.svg"), linear-gradient(0deg, #13B0EF 5.16%, #007BC8 94.29%);
+    }
+    @include respond-to('l') {
+      background:none;
+    }
+    @include respond-to('s') {
+      flex-direction: column-reverse;
+      min-height: auto;
+
+    }
+  }
+
+
+
+

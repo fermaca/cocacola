@@ -1,0 +1,268 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,600,700");
+@-webkit-keyframes floating {
+  from {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  65% {
+    -webkit-transform: translateY(15px);
+            transform: translateY(15px);
+  }
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+@keyframes floating {
+  from {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  65% {
+    -webkit-transform: translateY(15px);
+            transform: translateY(15px);
+  }
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+.origin {
+  position: relative;
+  -webkit-transform-origin: 150px 150px;
+          transform-origin: 150px 150px;
+  -webkit-animation: spin 20s linear infinite;
+          animation: spin 20s linear infinite;
+}
+
+@media (max-width: 1200px) {
+  .origin {
+    -webkit-transform-origin: 100px 100px;
+            transform-origin: 100px 100px;
+  }
+}
+
+@-webkit-keyframes spin {
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  50% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes floating {
+  from {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  65% {
+    -webkit-transform: translateY(15px);
+            transform: translateY(15px);
+  }
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+html, body {
+  height: 100vh;
+  margin: 0;
+  background: white;
+  overflow-x: hidden;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 1200px) {
+  body {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media (max-width: 720px) {
+  body {
+    background: url("../img/stars.svg"), -webkit-gradient(linear, left bottom, left top, color-stop(5.16%, #13B0EF), color-stop(94.29%, #007BC8));
+    background: url("../img/stars.svg"), linear-gradient(0deg, #13B0EF 5.16%, #007BC8 94.29%);
+  }
+}
+
+@media (max-width: 700px) {
+  body {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.astronaut {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-left: 30px;
+  margin-bottom: 120px;
+  -webkit-animation: floating 3s infinite ease-in-out;
+          animation: floating 3s infinite ease-in-out;
+}
+
+@media (max-width: 700px) {
+  .astronaut {
+    margin: 0;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
+.text-wrapper {
+  text-align: center;
+  font-family: sans-serif;
+}
+
+@media (max-width: 1200px) {
+  .text-wrapper {
+    margin-bottom: 50px;
+    padding: 20px 50px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .text-wrapper {
+    margin: 30px;
+    padding: 20px 30px;
+    background: white;
+    border-radius: 30px;
+  }
+}
+
+.text-wrapper .title {
+  font-size: 30px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.text-wrapper .subtitle {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.stars {
+  position: absolute;
+  top: 80px;
+}
+
+@media (max-width: 1200px) {
+  .stars {
+    display: none;
+  }
+}
+
+.moon {
+  -webkit-animation: spin 20s linear infinite;
+          animation: spin 20s linear infinite;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 50px;
+}
+
+@media (max-width: 1200px) {
+  .moon {
+    -webkit-transform-origin: 170px 170px;
+            transform-origin: 170px 170px;
+  }
+}
+
+@media (max-width: 700px) {
+  .moon {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .planet {
+    display: none;
+  }
+}
+
+.system {
+  margin-left: 30px;
+  width: 350px;
+  height: 350px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-animation: floating 3s infinite ease-in-out;
+          animation: floating 3s infinite ease-in-out;
+  -webkit-animation-delay: -1s;
+          animation-delay: -1s;
+}
+
+@media (max-width: 700px) {
+  .system {
+    display: none;
+  }
+}
+
+.space {
+  position: relative;
+  background: url(../img/sky.svg) center center no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 500px;
+}
+
+@media (max-width: 1200px) {
+  .space {
+    background: url("../img/stars.svg"), -webkit-gradient(linear, left bottom, left top, color-stop(5.16%, #13B0EF), color-stop(94.29%, #007BC8));
+    background: url("../img/stars.svg"), linear-gradient(0deg, #13B0EF 5.16%, #007BC8 94.29%);
+  }
+}
+
+@media (max-width: 720px) {
+  .space {
+    background: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .space {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    min-height: auto;
+  }
+}
+/*# sourceMappingURL=main.css.map */
