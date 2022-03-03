@@ -70,6 +70,7 @@ body{
   justify-content:center;
   @include respond-to('xl') {
     justify-content: space-between;
+    
   }
   @include respond-to('l') {
     background: url("../img/stars.svg"), linear-gradient(0deg, #13B0EF 5.16%, #007BC8 94.29%);
@@ -93,27 +94,50 @@ body{
 .text-wrapper{
   text-align: center;
   font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   @include respond-to('xl') {
-    margin-bottom: 50px;
-    padding: 20px 50px;
-  }
-  @include respond-to('xl') {
-    margin: 30px;
-    padding: 20px 30px;
+    padding: 50px 30px;
     background: rgba(255, 255,255,1);
     border-radius: 30px;
+    margin: 50px 20px;
   }
   .title{
    font-size: 30px;
    color: rgba(0,0,0,0.8);
+   margin: 0;
+   margin-bottom: 20px;
    
   }
   .subtitle{
   font-size: 20px;
   color: rgba(0,0,0,0.4);
+  margin: 0;
+  margin-bottom: 20px;
 
   }
 }
+
+.button{
+  &.primary{
+    font-size: 1em;
+    display: inline-block;
+    border: none;
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    text-align: left;
+    padding: 15px;
+    background: #ff101e;
+    box-shadow: 0 5px 10px rgba(210, 219, 231, 0.5);
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+  }
+}  
 
 .stars{
   position: absolute;
@@ -161,6 +185,7 @@ body{
   display: flex;
   justify-content: center;
   min-height: 500px;
+  flex-direction: row;
   @include respond-to('xl') {
       background: url("../img/stars.svg"), linear-gradient(0deg, #13B0EF 5.16%, #007BC8 94.29%);
     }
@@ -174,6 +199,6 @@ body{
     }
   }
 
-
+  
 
 
